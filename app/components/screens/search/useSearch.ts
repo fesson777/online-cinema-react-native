@@ -6,6 +6,7 @@ import { useSearchForm } from './useSearchForm'
 
 export const useSearch = () => {
 	const { searchTerm, debouncedSearch, control } = useSearchForm()
+
 	const { data: movies, isLoading } = useQuery(
 		['search movies', debouncedSearch],
 		() => MovieService.getAll(debouncedSearch),
@@ -13,5 +14,6 @@ export const useSearch = () => {
 			enabled: !!debouncedSearch
 		}
 	)
+
 	return { movies, isLoading, control, searchTerm }
 }
