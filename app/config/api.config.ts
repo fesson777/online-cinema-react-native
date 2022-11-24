@@ -1,4 +1,4 @@
-export const SERVER_URL = 'http://localhost:4200'
+export const SERVER_URL = 'http://10.0.2.2:4200'
 export const API_URL = `${SERVER_URL}/api`
 
 export const getAuthUrl = (string: string) => `/auth${string}`
